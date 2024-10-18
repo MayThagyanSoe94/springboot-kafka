@@ -22,8 +22,8 @@ public class KafkaConsumer {
             topics = "wikimedia_recent_change",
             groupId = "myConsumerGroup"
     )
-    public void consume(String eventMessage){
-        LOGGER.info(String.format("event message received -> %s" , eventMessage));
+    public void consume(String eventMessage) {
+        LOGGER.info(String.format("event message received -> %s", eventMessage));
         WikiMedia wikiMedia = new WikiMedia();
         wikiMedia.setWikiEventData(eventMessage);
         wikiMediaDataRepository.save(wikiMedia);
